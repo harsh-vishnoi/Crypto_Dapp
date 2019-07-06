@@ -28,20 +28,5 @@ contract('DappToken', accounts => {
         assert.equal(adminBalance.toNumber(), 10000, "_InitialSupply to admin")
       })
     });
-  });
 
-  it('check transfer amount', function(){
-    return DappToken.deployed().then(function(instance){
-        tokenInstance = instance;
-        return tokenInstance.transfer.call(accounts[1], 100);
-    }).then(function(success){
-      assert.equal(success, true, 'it returns true');
-    });
-  });
-
-  // it('approves third-party to transact', function(){
-  //   return DappToken.deployed().then(function(instance){
-  //       tokenInstance = instance;
-  //       return tokenInstance.approve.call(accounts[1], 100)
-  //   })
-  // })
+});
